@@ -45,14 +45,14 @@ Module.register("MMM-CalendarExt2", {
     },
     views: {
       daily: {
-        slotSubTitleFormat: "MMMM Do",
+        slotSubTitleFormat: "D MMM",
         slotTitleFormat: {
-          sameDay: '[Today]',
-          nextDay: '[Tomorrow]',
-          nextWeek: 'dddd',
+          sameDay: '[Idag]',
+          nextDay: '[Imorgon]',
+          nextWeek: 'ddd', // namn på dag i övermorgon
           lastDay: '[Yesterday]',
           lastWeek: '[Last] ddd',
-          sameElse: 'ddd, M/D'
+          sameElse: 'ddd'
         },
         type: "column",
       },
@@ -73,7 +73,8 @@ Module.register("MMM-CalendarExt2", {
         slotAltTitleFormat: "M/D",
         showWeekends: true,
         slotMaxHeight: "240px",
-        weeksFormat: "wo"
+        weeksFormat: "w"
+//        weeksFormat: "wo"
       },
       month: {
         slotTitleFormat: "D",
@@ -136,17 +137,18 @@ Module.register("MMM-CalendarExt2", {
       filterPassedEvent: false,
       maxItems:100,
       dateFormat: {
-        sameDay: "[Today]", // Or "MM/DD" format available
-        nextDay: "[Tomorrow]",
-        nextWeek: "dddd",
+        sameDay: "[Idag]", // Or "MM/DD" format available
+        nextDay: "[Imorgon]",
+        nextWeek: "DD",
+//        nextWeek: "dddd",
         lastDay: "[Yesterday]",
         lastWeek: "[Last] ddd",
-        sameElse: "M/D"
+        sameElse: "DD/M"
       },
       dateTimeFormat: {
         sameDay: "[Today] HH:mm",
         nextDay: "[Tomorrow] HH:mm",
-        nextWeek: "dddd HH:mm",
+        nextWeek: "d",
         lastDay: "[Yesterday] HH:mm",
         lastWeek: "[Last] ddd HH:mm",
         sameElse: "M/D HH:mm"
@@ -172,7 +174,7 @@ Module.register("MMM-CalendarExt2", {
     locale: "",
 
     rotateInterval: 0, //when 0, autoRotate will be disabled.
-    updateInterval: 1000 * 60, //If not rotated, this interval will be used for update content
+    updateInterval: 1000 * 60 * 10, //If not rotated, this interval will be used for update content
     deduplicateEventsOn: [],
     defaultSet: {
       calendar:{},

@@ -281,7 +281,7 @@ class ViewPeriod extends View {
     viewDom.classList.add(this.config.type)
   }
   adjustSlotWidth(slotDom, count) {
-    if (this.config.type == "row") slotDom.style.width = ((100 / count) - 3) + "%"
+    if (this.config.type == "row") slotDom.style.width = ((100 / count) -0.25) + "%"
   }
 }
 

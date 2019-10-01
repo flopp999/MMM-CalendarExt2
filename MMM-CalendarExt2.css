@@ -35,7 +35,7 @@
   animation-duration: 0.5s;
 }
 
-.CX2.shown {
+ol.CX2.shown {
   display:block;
   opacity: 1;
   animation-name: fadeInOpacity;
@@ -293,6 +293,7 @@
   right:0;
   bottom:0;
   background:
+  
   repeating-linear-gradient(
     45deg,
     transparent,
